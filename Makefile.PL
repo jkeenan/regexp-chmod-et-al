@@ -11,4 +11,14 @@ WriteMakefile(
     PREREQ_PM    => {
                      'Test::Simple' => 0.44,
                     },
+    (eval { ExtUtils::MakeMaker->VERSION(6.46) } ? ( META_MERGE => {
+      'meta-spec' => { version => 2 },
+      resources => {
+        repository  => {
+          url  => 'https://github.com/jkeenan/regexp-functions.git',
+          web  => 'https://github.com/jkeenan/regexp-functions',
+          type => 'git',
+        },
+      },
+    }) : () ),
 );
